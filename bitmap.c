@@ -45,7 +45,7 @@ struct pixel **read_pixel_array(FILE *image, int pixel_array_offset, int width, 
     int row_size = width * 3;
     int padding = (4 - (row_size % 4)) % 4;
     unsigned char buffer[3];
-    for (int i = height - 1; i >= 0; i--) {
+    for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             fread(buffer, sizeof(unsigned char), 3, image);
             pixels[i][j].blue = buffer[0];
