@@ -45,7 +45,7 @@ struct pixel **read_pixel_array(FILE *image, int pixel_array_offset, int width, 
     for (int i = 0; i < height; i++) {
         fread(pixels[i], sizeof(struct pixel), width, image);
     }
-    return pixels;}
+    return pixels;
 }
 /*
  * Print the blue, green, and red colour values of a pixel.
