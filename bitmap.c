@@ -42,7 +42,7 @@ struct pixel **read_pixel_array(FILE *image, int pixel_array_offset, int width, 
         }
     }
     fseek(image, pixel_array_offset, SEEK_SET);
-    int row_size = width * 3;
+    int row_size = width * sizeof(struct pixel);
     int padding = (4 - (row_size % 4)) % 4;
     for (int i = height-1; i >= 0; i--) {
         fread(pixels[i], sizeof(struct pixel), width, image);
